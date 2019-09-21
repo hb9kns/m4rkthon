@@ -7,9 +7,9 @@ seems like a joke^Whorrible idea.
 But we humans use that all the time, when we organize our thoughts with indentation,
 don't we? And when you use [Markdown][2], you know very well how nice that can be.
 
-So, I did the logical step (progress never ends!) and created **m4rkthon** which
-combines the best of three worlds: write your documentation right inside your code,
-use `m4` macro processor commands together with Python code, or *vice versa* -- I dunno.
+So, with the aim for neverending progress of mankind, **m4rkthon** was created, which
+combines the best of three worlds: write your documentation right inside your code, and
+use `m4` macro processor commands together with Python code, or *vice versa* -- whatever.
 
 ## File processing
 
