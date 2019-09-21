@@ -37,8 +37,6 @@ and `Y` can be any of `end` or `END` or `)` or `]` or `}` or `>`
    and then have the current indentation prepended
 4. any other lines will be removed
 
-Any other line will be passed through unmodified.
-
 ## Example: printable ASCII table
 
 (for Python3, using TABs for indentation)
