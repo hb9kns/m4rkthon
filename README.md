@@ -91,8 +91,8 @@ and processed with `m4rkthon.sh test.m4t` will result in
 		 6  ` a b c d e f g h i j k l m n o 
 		 7  p q r s t u v w x y z { | } ~  
 	
-
----
+Of course, the command `NAKS` defined as an m4 macro could be used as closing command
+for any block, as it is reducing indentation in general and not only related to `SKAN.`
 
 [1]: https://docs.python.org/2.0/ref/indentation.html "Indentation/Whitespace in Python"
 [2]: https://daringfireball.net/projects/markdown/ "original Markdown"
