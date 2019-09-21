@@ -27,12 +27,12 @@ This can be used to verify what would be fed to Python.
 
 This will be done between `m4` and `python` processing.
 
-In the following, 'X' can be any of 'begin' or 'BEGIN' or '(' or '[' or '{' or '<'
-and 'Y' can be any of 'end' or 'END' or ')' or ']' or '}' or '>'
+In the following, `X` can be any of `begin` or `BEGIN` or `(` or `[` or `{` or `<`
+and `Y` can be any of `end` or `END` or `)` or `]` or `}` or `>`
 (and pairs are not required to match).
 
-1. lines beginning with '*X' or '_X' or '.X' or ';X' will increase indentation by one TAB
-2. lines beginning with '*Y' or '_Y' or '.Y' or ';Y' will decrease indentation by one TAB
+1. lines beginning with `*X` or `_X` or `.X` or `;X` will increase indentation by one TAB
+2. lines beginning with `*Y` or `_Y` or `.Y` or `;Y` will decrease indentation by one TAB
 3. lines beginning with TAB or 4 SPC (Markdown "code") will be stripped from one TAB or 4 SPC
    and then have the current indentation prepended
 
