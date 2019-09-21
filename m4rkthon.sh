@@ -16,6 +16,7 @@ and 'Y' can be any of 'end' or 'END' or ')' or ']' or '}' or '>'
 2. lines beginning with '*Y' or '_Y' or '.Y' or ';Y' will decrease indentation by one TAB
 3. lines beginning with TAB or 4 SPC (Markdown "code") will be stripped from one TAB or 4 SPC
    and then have the current indentation prepended
+4. any other lines will be removed
 
 EOH
 exit 1
@@ -42,17 +43,14 @@ do case $ln in
  :\.*|:\**|:\;*|:_*) case $ln in
   :?begin*|:?BEGIN*|:?\(*|:?\[*|:?\{*|:?\<*)
    indent="$indent	"
-# echo "##### indent=$indent/"
    ;;
   :?end*|:?END*|:?\)*|:?\]*|:?\}*|:?\>*)
    indent="${indent%	}"
-# echo "##### indent=$indent/"
    ;;
   *) echo "unknown m4rkdown command '${ln#:}' ignored" >&2 ;;
   esac ;;
  :-:-:-*) echo "$indent${ln#:}" ;;
- *) echo "${ln#:}" ;;
+ *) ;;
  esac
-# echo ":ln=$ln$"
 done
 } | sed -e 's/^\(	*\)-:-:-/\1/' | $PY

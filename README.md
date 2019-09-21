@@ -35,6 +35,7 @@ and `Y` can be any of `end` or `END` or `)` or `]` or `}` or `>`
 2. lines beginning with `*Y` or `_Y` or `.Y` or `;Y` will decrease indentation by one TAB
 3. lines beginning with TAB or 4 SPC (Markdown "code") will be stripped from one TAB or 4 SPC
    and then have the current indentation prepended
+4. any other lines will be removed
 
 Any other line will be passed through unmodified.
 
@@ -42,6 +43,10 @@ Any other line will be passed through unmodified.
 
 (for Python3)
 
+	Quel est le point commun entre un robot et une sauce Napoli?
+	(Yes, you can write free text, as long as it's not indented
+	and does not look like a m4rkthon command.)
+	
 	m4_define(YO,print)m4_dnl
 	m4_define(FEED,`print ()')m4_dnl
 	m4_define(NOFEED,`end=""')m4_dnl
@@ -62,11 +67,11 @@ Any other line will be passed through unmodified.
 		FEED
 		NAKS
 		FEED
+	
+	Les deux sont au tomates!
 
 saved as `test.m4t` and processed with `m4rkthon.sh -n test.m4t` will give
 
-	#
-	# Da ASCII taybl!
 	print ("# ASCII")
 	print ()
 	print ('\t  /',0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f')
@@ -93,6 +98,10 @@ and processed with `m4rkthon.sh test.m4t` will result in
 	
 Of course, the command `NAKS` defined as an m4 macro could be used as closing command
 for any block, as it is reducing indentation in general and not only related to `SKAN.`
+
+---
+
+*2019 // HB9KNS*
 
 [1]: https://docs.python.org/2.0/ref/indentation.html "Indentation/Whitespace in Python"
 [2]: https://daringfireball.net/projects/markdown/ "original Markdown"
