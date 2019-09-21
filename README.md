@@ -41,7 +41,7 @@ Any other line will be passed through unmodified.
 
 ## Example: printable ASCII table
 
-(for Python3)
+(for Python3, using TABs for indentation)
 
 	Quel est le point commun entre un robot et une sauce Napoli?
 	(Yes, you can write free text, as long as it's not indented
