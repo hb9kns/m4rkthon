@@ -47,7 +47,7 @@ do case $ln in
   :?end*|:?END*|:?\)*|:?\]*|:?\}*|:?\>*)
    indent="${indent%	}"
    ;;
-  *) echo "unknown m4rkdown command '${ln#:}' ignored" >&2 ;;
+  *) echo "unknown m4rkthon command '${ln#:}' ignored" >&2 ;;
   esac ;;
  :-:-:-*) echo "$indent${ln#:}" ;;
  *) ;;
