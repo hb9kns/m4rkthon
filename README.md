@@ -11,6 +11,13 @@ So, with the aim for neverending progress of mankind, **m4rkthon** was created, 
 combines the best of three worlds: write your documentation right inside your code, and
 use `m4` macro processor commands together with Python code, or *vice versa* -- whatever.
 
+As a bonus, **m4rkthon** will make sure there is a colon ':' at the end of lines
+beginning with any of the words class/def/elif/else/except/for/if/try.
+Does anybody have a clue why Python freaks out when they're missing, but there
+follows an indented code block?  Totally useless syntactic sugar!
+(Yes I know, this logic fails in case of one-liners, where colons do make sense.
+However, that is totally against Python style, innit!?)
+
 ## File processing
 
 The `m4rkthon` script accepts the option `-n` and one or more file arguments.
@@ -34,7 +41,8 @@ and `Y` can be any of `end` or `END` or `)` or `]` or `}` or `>`
 1. lines beginning with `*X` or `_X` or `.X` or `;X` will increase indentation by one TAB
 2. lines beginning with `*Y` or `_Y` or `.Y` or `;Y` will decrease indentation by one TAB
 3. lines beginning with TAB or 4 SPC (Markdown "code") will be stripped from one TAB or 4 SPC
-   and then have the current indentation prepended
+   and then have the current indentation prepended plus colon added in case they begin with
+   a word requiring colonization
 4. any other lines will be removed
 
 ## Example: printable ASCII table
@@ -48,7 +56,7 @@ and `Y` can be any of `end` or `END` or `)` or `]` or `}` or `>`
 	m4_define(YO,print)m4_dnl
 	m4_define(FEED,`print ()')m4_dnl
 	m4_define(NOFEED,`end=""')m4_dnl
-	m4_define(SKAN,for $1 in range($2,$3):
+	m4_define(SKAN,for $1 in range($2,$3)
 	.BEGIN)m4_dnl
 	m4_define(NAKS,pass
 	.END)m4_dnl
@@ -73,9 +81,9 @@ saved as `test.m4t` and processed with `m4rkthon.sh -n test.m4t` will give
 	print ("# ASCII")
 	print ()
 	print ('\t  /',0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f')
-	for z in range(2,8):
+	for z in range(2,8) :
 		print ('\t',z,' ', end="")
-		for s in range(0,16):
+		for s in range(0,16) :
 			print (chr(16*z+s)+' ', end="")
 			pass
 		print ()
@@ -99,7 +107,7 @@ for any block, as it is reducing indentation in general and not only related to 
 
 ---
 
-*2019 // HB9KNS*
+*2020 // HB9KNS*
 
 [1]: https://docs.python.org/2.0/ref/indentation.html "Indentation/Whitespace in Python"
 [2]: https://daringfireball.net/projects/markdown/ "original Markdown"
