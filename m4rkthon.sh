@@ -64,7 +64,7 @@ do case $ln in
 # decrease indentation by removing last indentation
    indent="${indent%	}"
    ;;
-  *) echo "unknown m4rkdown command '${ln#:}' ignored" >&2 ;;
+  *) echo "unknown m4rkthon command '${ln#:}' ignored" >&2 ;;
   esac ;;
 # initially indented line (already Python code): remove prepended ':'
  :-:-:-*) echo "${ln#:}" | { read w1 rest
